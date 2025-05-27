@@ -4,117 +4,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TisztaKlíma - Klíma tisztítás és karbantartás</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>TisztaKlíma</title>
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
-            background: url('background.jpg') no-repeat center center fixed;
+            background-image: url('images/background.jpg');
             background-size: cover;
-            color: #333;
+            background-attachment: fixed;
+            color: white;
         }
-        header {
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 1em;
-            text-align: center;
-        }
-        nav {
-            background-color: #0f62fe;
-            padding: 1em;
-            text-align: center;
+        header, nav, section, footer {
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.6);
+            margin: 10px;
+            border-radius: 8px;
         }
         nav a {
-            color: white;
-            margin: 0 15px;
+            color: #00ffff;
+            margin: 0 10px;
             text-decoration: none;
-            font-weight: bold;
-        }
-        main {
-            padding: 2em;
-            background-color: rgba(255, 255, 255, 0.85);
-            max-width: 1000px;
-            margin: auto;
-            border-radius: 8px;
-        }
-        h1, h2 {
-            color: #0f62fe;
-        }
-        form {
-            margin-top: 2em;
-        }
-        input, textarea, button {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-        }
-        button {
-            background-color: #0f62fe;
-            color: white;
-            border: none;
-            font-weight: bold;
-        }
-        .feedbacks {
-            margin-top: 2em;
-            padding: 1em;
-            background-color: #f4f4f4;
-            border-radius: 8px;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>TisztaKlíma</h1>
-        <p>Professzionális klíma tisztítás és karbantartás</p>
+        <h1>TisztaKlíma – Professzionális Klímatisztítás</h1>
+        <nav>
+            <a href="#rolunk">Rólunk</a>
+            <a href="#deepclean">Deep Clean Technológia</a>
+            <a href="#tisztitas">Tisztítás gyakorisága</a>
+            <a href="#kapcsolat">Kapcsolat</a>
+            <a href="#velemenyek">Ügyfelek véleményei</a>
+        </nav>
     </header>
-    <nav>
-        <a href="#tisztitas">Klíma tisztítás</a>
-        <a href="#kapcsolat">Kapcsolat</a>
-        <a href="#velemenyek">Ügyfelek véleményei</a>
-    </nav>
-    <main>
-        <section id="tisztitas">
-            <h2>Klíma tisztítás és karbantartás – Hányszor kell egy évben?</h2>
-            <p>A klíma tisztítása és rendszeres karbantartása nem csupán a készülék optimális működéséhez, hanem az otthoni kényelem és egészség megőrzéséhez is elengedhetetlen...</p>
-        </section>
-
-        <section id="kapcsolat">
-            <h2>Kapcsolatfelvételi űrlap</h2>
-            <form>
-                <input type="text" placeholder="Név" required>
-                <input type="email" placeholder="Email" required>
-                <textarea rows="5" placeholder="Üzenet"></textarea>
-                <button type="submit">Küldés</button>
-            </form>
-        </section>
-
-        <section id="velemenyek" class="feedbacks">
-            <h2>Ügyfelek véleményei</h2>
-            <div id="feedback-list">
-                <p><strong>Kovács András:</strong> Gyors és precíz munka, csak ajánlani tudom!</p>
-                <p><strong>Nagy Mária:</strong> Már másnap jöttek, és tökéletesen kitisztították a klímát!</p>
-            </div>
-            <form onsubmit="addFeedback(event)">
-                <input type="text" id="name" placeholder="Neved" required>
-                <textarea id="feedback" rows="3" placeholder="Írd le a tapasztalataid..." required></textarea>
-                <button type="submit">Vélemény beküldése</button>
-            </form>
-        </section>
-    </main>
-    <script>
-        function addFeedback(e) {
-            e.preventDefault();
-            const name = document.getElementById("name").value;
-            const feedback = document.getElementById("feedback").value;
-            const list = document.getElementById("feedback-list");
-            const entry = document.createElement("p");
-            entry.innerHTML = `<strong>${name}:</strong> ${feedback}`;
-            list.appendChild(entry);
-            document.getElementById("name").value = '';
-            document.getElementById("feedback").value = '';
-        }
-    </script>
+    <section id="rolunk">
+        <h2>Rólunk</h2>
+        <p>Cégünk professzionális klímatisztítással és karbantartással foglalkozik. Küldetésünk a tiszta és egészséges levegő biztosítása otthonában.</p>
+    </section>
+    <section id="deepclean">
+        <h2>Deep Clean Technológia</h2>
+        <p>A Deep Clean nem vegyszermentes, hanem egy alapos, mély tisztítási eljárás, mely során a hőcserélő is teljes körű tisztításon esik át speciális eszközökkel.</p>
+    </section>
+    <section id="tisztitas">
+        <h2>Klíma tisztítás és karbantartás – Hányszor kell egy évben?</h2>
+        <p>Évente legalább kétszer ajánlott, tavasszal és ősszel. Intenzív használat esetén 3-4 havonta javasolt szakemberrel végeztetni.</p>
+    </section>
+    <section id="kapcsolat">
+        <h2>Kapcsolat</h2>
+        <form>
+            <label>Név:<br><input type="text" name="name" required></label><br><br>
+            <label>Email:<br><input type="email" name="email" required></label><br><br>
+            <label>Üzenet:<br><textarea name="message" required></textarea></label><br><br>
+            <button type="submit">Küldés</button>
+        </form>
+    </section>
+    <section id="velemenyek">
+        <h2>Ügyfelek véleményei</h2>
+        <p><em>Itt megjelennek a beküldött vélemények...</em></p>
+    </section>
+    <footer>
+        <p>© 2025 TisztaKlíma</p>
+    </footer>
 </body>
 </html>
